@@ -2,10 +2,18 @@
 <div>
   <table>
     <tr>
-      <th scope='col'>Title</th>
-      <th scope='col'>Artist</th>
-      <th scope='col'>Year</th>
-      <th scope='col'>Genre</th>
+      <th scope='col'>
+        <%= link_to 'Title', albums_title_sort_path %>
+      </th>
+      <th scope='col'>
+        <%= link_to 'Artist', albums_artist_sort_path %>
+      </th>
+      <th scope='col'>
+        <%= link_to 'Year', albums_year_sort_path %>
+      </th>
+      <th scope='col'>
+        <%= link_to 'Genre', albums_genre_sort_path %>
+      </th>
     </tr>
     <% @albums.each do |a| %>
     <tr>

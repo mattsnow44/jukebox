@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController
   def index
-    @albums = Album.all
+    @albums = Album.all.order(:title)
   end
 
   def show
@@ -32,6 +32,27 @@ class AlbumsController < ApplicationController
       render :edit
     end
   end
+
+  def title_sort
+    @albums = Album.all.order(:title)
+    render :index
+  end
+
+  def artist_sort
+    @albums = Album.all.order(:artist)
+    render :index
+  end
+
+  def year_sort
+    @albums = Album.all.order(:year)
+    render :index
+  end
+
+  def genre_sort
+    @albums = Album.all.order(:genre)
+    render :index
+  end
+
 
   def destroy
     album = Album.find(params[:id])

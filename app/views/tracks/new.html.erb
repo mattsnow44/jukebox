@@ -2,6 +2,10 @@
 
 <%= form_for [@album, @track] do |t| %>
 
+<%= t.label :track_no, {autofocus: true} %>
+<%= t.text_field :track_no %>
+<br>
+
 <%= t.label 'Title' %>
 <%= t.text_field :t_title %>
 <br>

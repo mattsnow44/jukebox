@@ -1,20 +1,25 @@
 <h1><%= @album.title %></h1>
 
 <h3>
-  Artist: <%= @album.artist %>
-  Year: <%= @album.year %>
+  Artist: <%= @album.artist %>,
+  Year: <%= @album.year %>,
   Genre: <%= @album.genre %>
 </h3>
 
-<ol>
-<% @album.tracks.each do |t| %>
-  <li>
-    <%= t.t_title %>
-    <%= link_to 'Edit', edit_album_track_path(@album, t) %>
-    <%= link_to 'Delete', album_track_path(@album, t), method: :delete %>
-  </li>
+<table>
+  <tr>
+    <th>Track No.</th>
+    <th>Title</th>
+  </tr>
+<% @album.tracks.order(:track_no).each do |t| %>
+  <tr>
+    <td><%= t.track_no %></td>
+    <td><%= t.t_title %></td>
+    <td><%= link_to 'Edit', edit_album_track_path(@album, t) %></td>
+    <td><%= link_to 'Delete', album_track_path(@album, t), method: :delete %></td>
+  </tr>
 <% end %>
-</ol>
+</table>
 
 
 <%= link_to 'Home', albums_path %>
