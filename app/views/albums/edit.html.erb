@@ -1,0 +1,25 @@
+<h1>Edit Album</h1>
+
+<%= form_for @album do |a| %>
+
+<%= a.label :title %>
+<%= a.text_field :title %>
+<br>
+
+<%= a.label :artist %>
+<%= a.text_field :artist %>
+<br>
+
+<%= a.label :year %>
+<%= a.text_field :year %>
+<br>
+
+<%= a.label :genre %>
+<%= a.text_field :genre %>
+<br>
+
+<%= a.submit %>
+
+<% end %>
+
+<%= link_to 'Home', root_path %>
